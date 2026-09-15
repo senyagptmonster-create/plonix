@@ -1,10 +1,10 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:plonix/product/product_app.dart';
+import 'package:plonix/plonix_app.dart';
 
 void main() {
-  testWidgets('Smoke test', (WidgetTester tester) async {
-    await tester.pumpWidget(const MaterialApp(home: ProductApp()));
-    expect(find.byType(ProductApp), findsOneWidget);
+  testWidgets('PlonixApp smoke test', (WidgetTester tester) async {
+    await tester.pumpWidget(const PlonixApp());
+    await tester.pump();
+    expect(find.text('Pitch Generator'), findsWidgets);
   });
 }
